@@ -23,7 +23,7 @@ router.post("/register", async (req, res) => {
     await user.save();
     res.status(201).json({ message: "Registered successfully!" });
   } catch (err) {
-    res.status(500).json({ message: "Server error" });
+    res.status(500).json({ message: err.message });
   }
 });
 
@@ -44,7 +44,7 @@ router.post("/login", async (req, res) => {
       user: { name: user.name, email: user.email, role: user.role, photo: user.photo }
     });
   } catch (err) {
-    res.status(500).json({ message: "Server error" });
+    res.status(500).json({ message: err.message });
   }
 });
 
@@ -61,7 +61,7 @@ router.post("/profile/photo", protect, upload.single("photo"), async (req, res) 
       user: { name: user.name, email: user.email, role: user.role, photo: user.photo }
     });
   } catch (err) {
-    res.status(500).json({ message: "Server error" });
+    res.status(500).json({ message: err.message });
   }
 });
 
