@@ -15,7 +15,7 @@ function AdminDashboard() {
   useEffect(() => { fetchIssues(); }, []);
 const fetchIssues = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/issues/all", {
+      const res = await axios.get("http://https://civicalert-backend-bdgdb7h2aqbfdjgk.centralindia-01.azurewebsites.net/api/issues/all", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setIssues(res.data);
@@ -24,7 +24,7 @@ const fetchIssues = async () => {
 
   const updateStatus = async (id, status) => {
     try {
-      await axios.put(`http://localhost:5000/api/issues/status/${id}`, { status }, {
+      await axios.put(`http://https://civicalert-backend-bdgdb7h2aqbfdjgk.centralindia-01.azurewebsites.net/api/issues/status/${id}`, { status }, {
         headers: { Authorization: `Bearer ${token}` },
       });
       fetchIssues();
@@ -33,7 +33,7 @@ const fetchIssues = async () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/issues/${id}`, {
+      await axios.delete(`http://https://civicalert-backend-bdgdb7h2aqbfdjgk.centralindia-01.azurewebsites.net/api/issues/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       fetchIssues();
@@ -45,7 +45,7 @@ const fetchIssues = async () => {
     try {
       const formData = new FormData();
       formData.append("photo", file);
-      const res = await axios.post("http://localhost:5000/api/auth/profile/photo", formData, {
+      const res = await axios.post("http://https://civicalert-backend-bdgdb7h2aqbfdjgk.centralindia-01.azurewebsites.net/api/auth/profile/photo", formData, {
         headers: { Authorization: `Bearer ${token}`, "Content-Type": "multipart/form-data" },
       });
       const updatedUser = { ...user, photo: res.data.photo };
@@ -182,7 +182,7 @@ const fetchIssues = async () => {
   ];
 
   const navBadges = { issues: issues.length, inprogress: progressCount, resolved: resolvedCount };
-  const avatarSrc = user?.photo ? `http://localhost:5000/uploads/${user.photo}` : null;
+  const avatarSrc = user?.photo ? `http://https://civicalert-backend-bdgdb7h2aqbfdjgk.centralindia-01.azurewebsites.net/uploads/${user.photo}` : null;
 
   return (
     <div style={styles.container}>
