@@ -24,7 +24,7 @@ jobs:
           npm run build
 
       - name: Zip frontend build
-        run: zip -r frontend-release.zip frontend/dist/
+        run: cd frontend && zip -r ../frontend-release.zip dist/
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
