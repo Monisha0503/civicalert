@@ -14,7 +14,7 @@ function Login() {
 
   const handleSubmit = async () => {
     try {
-      const res = await axios.post("https://civicalert-backend-bdgdb7h2aqbfdjgk.centralindia-01.azurewebsites.net0/api/auth/login", {
+      const res = await axios.post("https://civicalert-backend-bdgdb7h2aqbfdjgk.centralindia-01.azurewebsites.net/api/auth/login", {
         email: form.email,
         password: form.password,
       });
