@@ -14,7 +14,7 @@ function Register() {
 
   const handleSubmit = async () => {
     try {
-      await axios.post("https://civicalert-backend-bdgdb7h2aqbfdjgk.centralindia-01.azurewebsites.net/api/auth/register", form);
+      await axios.post(`${import.meta.env.VITE_API_URL}/api/auth/register`, form);
       navigate("/");
     } catch (err) {
       setError("❌ Registration failed! Try again.");
