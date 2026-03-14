@@ -14,7 +14,7 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use("/api/auth", authRoutes);
 app.use("/api/issues", issueRoutes);
 // MongoDB Connect
-const MONGO_URI = process.env.MONGO_URI || "mongodb+srv://monishagnanaprakasam4_db_user:6oIJxdhybS8BmvS3@cluster0.zoj9zfb.mongodb.net/civicalert?appName=Cluster0";
+const MONGO_URI = process.env.MONGO_URI || "mongodb+srv://monishagnanaprakasam4_db_user:Civic2024@cluster0.zoj9zfb.mongodb.net/civicalert?appName=Cluster0";
 mongoose.connect(MONGO_URI)
   .then(() => console.log("MongoDB Connected ✅"))
   .catch((err) => console.log("MongoDB Error:", err.message));
