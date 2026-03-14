@@ -39,7 +39,7 @@ function CitizenDashboard() {
 
   const fetchIssues = async () => {
     try {
-      const res = await axios.get("http://https://civicalert-backend-bdgdb7h2aqbfdjgk.centralindia-01.azurewebsites.net/api/issues/myissues", {
+      const res = await axios.get("https://civicalert-backend-bdgdb7h2aqbfdjgk.centralindia-01.azurewebsites.net/api/issues/myissues", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setIssues(res.data);
@@ -132,7 +132,7 @@ function CitizenDashboard() {
     try {
       const formData = new FormData();
       formData.append("photo", file);
-      const res = await axios.post("http://https://civicalert-backend-bdgdb7h2aqbfdjgk.centralindia-01.azurewebsites.net/api/auth/profile/photo", formData, {
+      const res = await axios.post("https://civicalert-backend-bdgdb7h2aqbfdjgk.centralindia-01.azurewebsites.net/api/auth/profile/photo", formData, {
         headers: { Authorization: `Bearer ${token}`, "Content-Type": "multipart/form-data" },
       });
       const updatedUser = { ...user, photo: res.data.photo };
@@ -152,7 +152,7 @@ function CitizenDashboard() {
       formData.append("category", form.category);
       formData.append("location", form.location);
       if (photo) formData.append("photo", photo);
-      await axios.post("http://https://civicalert-backend-bdgdb7h2aqbfdjgk.centralindia-01.azurewebsites.net/api/issues/report", formData, {
+      await axios.post("https://civicalert-backend-bdgdb7h2aqbfdjgk.centralindia-01.azurewebsites.net/api/issues/report", formData, {
         headers: { Authorization: `Bearer ${token}`, "Content-Type": "multipart/form-data" },
       });
       setMessage("✅ Issue reported successfully!");
@@ -165,7 +165,7 @@ function CitizenDashboard() {
 
   const handleUpvote = async (id) => {
     try {
-      await axios.put(`http://https://civicalert-backend-bdgdb7h2aqbfdjgk.centralindia-01.azurewebsites.net/api/issues/upvote/${id}`, {}, {
+      await axios.put(`https://civicalert-backend-bdgdb7h2aqbfdjgk.centralindia-01.azurewebsites.net/api/issues/upvote/${id}`, {}, {
         headers: { Authorization: `Bearer ${token}` },
       });
       fetchIssues();
@@ -174,7 +174,7 @@ function CitizenDashboard() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://https://civicalert-backend-bdgdb7h2aqbfdjgk.centralindia-01.azurewebsites.net/api/issues/${id}`, {
+      await axios.delete(`https://civicalert-backend-bdgdb7h2aqbfdjgk.centralindia-01.azurewebsites.net/api/issues/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       fetchIssues();
@@ -224,7 +224,7 @@ function CitizenDashboard() {
     [13.1067, 80.2206], [13.0012, 80.2565], [13.0878, 80.2785],
   ];
 
-  const avatarSrc = user?.photo ? `http://https://civicalert-backend-bdgdb7h2aqbfdjgk.centralindia-01.azurewebsites.net/uploads/${user.photo}` : null;
+  const avatarSrc = user?.photo ? `https://civicalert-backend-bdgdb7h2aqbfdjgk.centralindia-01.azurewebsites.net/uploads/${user.photo}` : null;
 
   const quickQuestions = [
     "How to report an issue?",
@@ -479,7 +479,7 @@ function CitizenDashboard() {
                     <div style={{ display: "flex", gap: "12px", alignItems: "flex-start" }}>
                       <div style={styles.issueIcon}>
                         {issue.photo
-                          ? <img src={`http://https://civicalert-backend-bdgdb7h2aqbfdjgk.centralindia-01.azurewebsites.net/uploads/${issue.photo}`} alt="issue" style={{ width: "42px", height: "42px", borderRadius: "8px", objectFit: "cover" }} />
+                          ? <img src={`https://civicalert-backend-bdgdb7h2aqbfdjgk.centralindia-01.azurewebsites.net/uploads/${issue.photo}`} alt="issue" style={{ width: "42px", height: "42px", borderRadius: "8px", objectFit: "cover" }} />
                           : getCategoryIcon(issue.category)}
                       </div>
                       <div style={{ flex: 1 }}>
